@@ -5,6 +5,7 @@ from fastapi import FastAPI, HTTPException
 from dotenv import load_dotenv
 # import openai
 from openai import OpenAI
+from fastapi.middleware.cors import CORSMiddleware
 from models.schemas import (
     OpenAIRequest, OpenAIResponse, 
     TutorRequest, TutorResponse,
@@ -26,6 +27,16 @@ app = FastAPI(
     description="Video Context and Tutor AI Assistant",
     version="0.1.0"
 )
+
+# Allow frontend to access the API
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Change this to specific frontend domain for security (e.g., ["https://your-frontend.com"])
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers
+)
+
 api_key = os.getenv("OPENAI_API_KEY")
 # Configure OpenAI client
 client=OpenAI(api_key = api_key)
