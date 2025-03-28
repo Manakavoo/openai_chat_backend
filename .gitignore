@@ -10,8 +10,8 @@ __pycache__/
 *$py.class
 myenv/
 # Conversation Files (optional, depends on your privacy requirements)
-# conversations/*.json
-
+conversations/*.json
+templates/
 # IDE Specific
 .vscode/
 .idea/
