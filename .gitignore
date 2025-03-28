@@ -1,0 +1,26 @@
+# Virtual Environment
+venv/
+env/
+.env
+*.env
+
+# Python Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+myenv/
+# Conversation Files (optional, depends on your privacy requirements)
+# conversations/*.json
+
+# IDE Specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
